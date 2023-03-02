@@ -8,48 +8,15 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import emailjs from "@emailjs/browser";
+import emailjs, { send } from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { db } from "./api/firebaseconfig";
+import { arrayUnion, arrayRemove, serverTimestamp } from "firebase/firestore";
 
 export default function Home() {
   const form = useRef();
   const toast = useToast();
   const [email, setEmail] = useState("");
-  const [emp, setEmp] = useState(false);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_v2mbnjh",
-        "template_3vou665",
-        form.current,
-        "4kxrNn5y6SPaUA7G1"
-      )
-      .then(
-        (result) => {
-          // toast({
-          //   title: "Subscribed successfully",
-          //   duration: 3000,
-          //   isClosable: true,
-          //   status: "success",
-          // });
-          console.log(result.text);
-        },
-        (error) => {
-          // toast({
-          //   title: "Subscription Pending",
-          //   duration: 3000,
-          //   isClosable: true,
-          //   status: "info",
-          // });
-          console.log(error.text);
-        }
-      );
-  };
-
   const submitIt = (e) => {
     e.preventDefault();
     db.collection("emails")
@@ -57,33 +24,51 @@ export default function Home() {
       .get()
       .then((val) => {
         if (!val.empty) {
-          setEmp(false);
-        } else {
-          setEmp(true);
-        }
-      })
-      .then((yo) => {
-        if (emp) {
-          db.collection("emails")
-            .add({ email: email })
-            .then((o) => {
-              sendEmail(e);
-              toast({
-                title: "Subscribed successfully",
-                duration: 3000,
-                isClosable: true,
-                status: "success",
-              });
-              setEmail("");
-              return;
-            });
-        } else {
           toast({
             title: "Email already exists in our database...",
             isClosable: true,
             duration: 3000,
             status: "error",
           });
+        } else {
+          db.collection("emails")
+            .add({ email: email, timestamp: serverTimestamp() })
+            .then((o) => {
+              toast({
+                title: "Subscribed successfully",
+                duration: 3000,
+                isClosable: true,
+                status: "success",
+              });
+              emailjs
+                .sendForm(
+                  "service_v2mbnjh",
+                  "template_3vou665",
+                  form.current,
+                  "4kxrNn5y6SPaUA7G1"
+                )
+                .then(
+                  (result) => {
+                    // toast({
+                    //   title: "Subscribed successfully",
+                    //   duration: 3000,
+                    //   isClosable: true,
+                    //   status: "success",
+                    // });
+                    console.log(result.text);
+                  },
+                  (error) => {
+                    // toast({
+                    //   title: "Subscription Pending",
+                    //   duration: 3000,
+                    //   isClosable: true,
+                    //   status: "info",
+                    // });
+                    console.log(error.text);
+                  }
+                );
+              //setEmail("");
+            });
         }
       });
   };
@@ -105,8 +90,26 @@ export default function Home() {
         alignItems={"center"}
         //justifyContent={"space-between"}
         //gap={"10vh"}
+        bgSize={"cover"}
+        bgPosition={"center"}
+        bgRepeat={"none"}
+        bgAttachment={"fixed"}
+        bgImage={"url('/img.png')"}
+        bgColor={"rgba(0, 0, 0, 0.25)"}
       >
         <Box
+          filter="blur(50px)"
+          w="100vw" // set the width of the box to match the image
+          h="100vh"
+          bgColor={"rgba(0, 0, 0, 0.25)"}
+          position="absolute"
+          bgSize={"cover"}
+          bgPosition={"center"}
+          bgRepeat={"none"}
+          bgAttachment={"fixed"}
+          bgImage={"url('/img.png')"}
+        ></Box>
+        {/* <Box
           filter="blur(50px)"
           w="100vw" // set the width of the box to match the image
           h="100vh"
@@ -121,7 +124,7 @@ export default function Home() {
             position="absolute" // position the box on top of the image
             //backdropFilter="blur(8px)" // add the blur effect
           />
-        </Box>
+        </Box> */}
         <Button colorScheme={"transparent"} width={300} marginTop={5}>
           <Image
             src="/top.png"
@@ -138,10 +141,14 @@ export default function Home() {
           <Text
             zIndex={900000}
             fontWeight={800}
-            color={"black"}
+            color={"#FFFFFF"}
             fontSize={{ base: "50pt", md: "60pt", lg: "70pt" }}
             fontFamily={"courier"}
             textAlign={"center"}
+            backgroundColor={"#000"}
+            paddingLeft={{ base: 3, md: 5, lg: 7 }}
+            paddingRight={{ base: 3, md: 5, lg: 7 }}
+            borderRadius={12}
           >
             Coming Soon
           </Text>
@@ -154,22 +161,29 @@ export default function Home() {
             <Text
               textAlign={"center"}
               zIndex={900000}
-              color={"black"}
+              color={"#000"}
               fontFamily={"courier"}
               fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
+              as={"i"}
             >
               A clothing brand designed for people pursuing their passions.
             </Text>
             <Text
               textAlign={"center"}
               zIndex={900000}
-              color={"black"}
+              color={"#000"}
               fontFamily={"courier"}
               fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
+              as={"i"}
             >
               Subscribe below to newsletter (I promise we do not spam).
             </Text>
-            <form onSubmit={(e) => submitIt(e)}>
+            <form
+              ref={form}
+              onSubmit={(e) => {
+                submitIt(e);
+              }}
+            >
               <Flex gap={5}>
                 <Input
                   backgroundColor={"white"}
@@ -209,6 +223,14 @@ export default function Home() {
             _hover={{
               backgroundColor: "white",
             }}
+            onClick={() =>
+              toast({
+                title: "Instagram not created yet",
+                isClosable: true,
+                status: "info",
+                duration: 3000,
+              })
+            }
           >
             <Image
               src="/insta.png"
@@ -221,6 +243,14 @@ export default function Home() {
             _hover={{
               backgroundColor: "white",
             }}
+            onClick={() =>
+              toast({
+                title: "Facebook not created yet",
+                isClosable: true,
+                status: "info",
+                duration: 3000,
+              })
+            }
           >
             <Image
               src="/facebook.png"
