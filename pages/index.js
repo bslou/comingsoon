@@ -223,7 +223,7 @@ export default function Home() {
           gap={2}
         >
           <Link
-            zIndex={900000}
+            //zIndex={900000}
             color={"black"}
             onClick={() =>
               router.push(
