@@ -4,6 +4,7 @@ import {
   Flex,
   Image,
   Input,
+  Link,
   Text,
   useToast,
 } from "@chakra-ui/react";
@@ -12,10 +13,12 @@ import emailjs, { send } from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { db } from "./api/firebaseconfig";
 import { arrayUnion, arrayRemove, serverTimestamp } from "firebase/firestore";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const form = useRef();
   const toast = useToast();
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const submitIt = (e) => {
     e.preventDefault();
@@ -214,49 +217,65 @@ export default function Home() {
         <Flex
           position={"absolute"}
           bottom={"5vh"}
-          alignItems={"flex-end"}
+          direction="column"
+          alignItems={"center"}
           justifyContent={"center"}
+          gap={2}
         >
-          <Button
-            colorScheme={"transparent"}
-            width={"25%"}
-            _hover={{
-              backgroundColor: "white",
-            }}
+          <Link
+            zIndex={900000}
+            color={"black"}
             onClick={() =>
-              toast({
-                title: "Instagram not created yet",
-                isClosable: true,
-                status: "info",
-                duration: 3000,
-              })
+              router.push(
+                "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMSqJmcxcFHvnJSdxSsPsMlCBjhDCLBRcvvKgtQfjThdLNTXMxkbSjFKkMPBBSQGLPMSZlV"
+              )
             }
+            target={"_blank"}
           >
-            <Image
-              src="/insta.png"
-              alt={"A Passionate Nerd - Instagram Icon"}
-            />
-          </Button>
-          <Button
-            colorScheme={"transparent"}
-            width={"25%"}
-            _hover={{
-              backgroundColor: "white",
-            }}
-            onClick={() =>
-              toast({
-                title: "Facebook not created yet",
-                isClosable: true,
-                status: "info",
-                duration: 3000,
-              })
-            }
-          >
-            <Image
-              src="/facebook.png"
-              alt={"A Passionate Nerd - Facebook Icon"}
-            />
-          </Button>
+            apassionatenerdshop@gmail.com
+          </Link>
+          <Flex alignItems={"flex-end"} justifyContent={"center"}>
+            <Button
+              colorScheme={"transparent"}
+              width={"25%"}
+              _hover={{
+                backgroundColor: "white",
+              }}
+              onClick={() =>
+                toast({
+                  title: "Instagram not created yet",
+                  isClosable: true,
+                  status: "info",
+                  duration: 3000,
+                })
+              }
+            >
+              <Image
+                src="/insta.png"
+                alt={"A Passionate Nerd - Instagram Icon"}
+              />
+            </Button>
+            <Button
+              colorScheme={"transparent"}
+              width={"25%"}
+              _hover={{
+                backgroundColor: "white",
+              }}
+              onClick={() =>
+                toast({
+                  title: "Facebook not created yet",
+                  isClosable: true,
+                  status: "info",
+                  duration: 3000,
+                })
+              }
+            >
+              <Image
+                src="/facebook.png"
+                alt={"A Passionate Nerd - Facebook Icon"}
+              />
+            </Button>
+          </Flex>
         </Flex>
       </Flex>
     </>
