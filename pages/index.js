@@ -207,6 +207,7 @@ export default function Home() {
                   width={{ base: 200, md: 300, lg: 400 }}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  name="to_email"
                   required
                 />
                 <Button
