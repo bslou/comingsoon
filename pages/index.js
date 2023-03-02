@@ -224,7 +224,9 @@ export default function Home() {
         >
           <Link
             //zIndex={900000}
+            fontFamily={"courier"}
             color={"black"}
+            fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
             onClick={() =>
               router.push(
                 "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMSqJmcxcFHvnJSdxSsPsMlCBjhDCLBRcvvKgtQfjThdLNTXMxkbSjFKkMPBBSQGLPMSZlV"
