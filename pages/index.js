@@ -101,7 +101,8 @@ export default function Home() {
         bgColor={"rgba(0, 0, 0, 0.25)"}
       >
         <Box
-          filter="blur(50px)"
+          filter="blur(100px)"
+          //filter="blur(50px)"
           w="100vw" // set the width of the box to match the image
           h="100vh"
           bgColor={"rgba(0, 0, 0, 0.25)"}
@@ -155,6 +156,14 @@ export default function Home() {
           >
             Coming Soon
           </Text>
+          <Image
+            position={"absolute"}
+            src="/exc.png"
+            width={{ base: 50, md: 75, lg: 100 }}
+            zIndex={900000000}
+            right={0}
+            top={{ base: -5, md: -9, lg: -10 }}
+          />
           <Flex
             direction={"column"}
             alignItems={"center"}
