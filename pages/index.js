@@ -85,6 +85,12 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Flex
         w="100vw" // set the width of the box to match the image
@@ -147,7 +153,7 @@ export default function Home() {
             fontWeight={800}
             color={"#FFFFFF"}
             fontSize={{ base: "50pt", md: "60pt", lg: "70pt" }}
-            fontFamily={"courier"}
+            fontFamily={"Open Sans"}
             textAlign={"center"}
             backgroundColor={"#000"}
             paddingLeft={{ base: 3, md: 5, lg: 7 }}
@@ -159,6 +165,7 @@ export default function Home() {
           <Image
             position={"absolute"}
             src="/exc.png"
+            alt={"A Passionate Nerd Exclusive Sign"}
             width={{ base: 50, md: 75, lg: 100 }}
             zIndex={900000000}
             right={0}
@@ -174,7 +181,7 @@ export default function Home() {
               textAlign={"center"}
               zIndex={900000}
               color={"#000"}
-              fontFamily={"courier"}
+              fontFamily={"Open Sans"}
               fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
               as={"i"}
             >
@@ -184,7 +191,7 @@ export default function Home() {
               textAlign={"center"}
               zIndex={900000}
               color={"#000"}
-              fontFamily={"courier"}
+              fontFamily={"Open Sans"}
               fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
               as={"i"}
             >
@@ -202,7 +209,7 @@ export default function Home() {
                   borderRadius={20}
                   placeholder={"Email Address"}
                   type={"email"}
-                  fontFamily={"courier"}
+                  fontFamily={"Open Sans"}
                   fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
                   width={{ base: 200, md: 300, lg: 400 }}
                   value={email}
@@ -211,7 +218,7 @@ export default function Home() {
                   required
                 />
                 <Button
-                  fontFamily={"courier"}
+                  fontFamily={"Open Sans"}
                   backgroundColor={"white"}
                   borderRadius={20}
                   width={{ base: 125, md: 150, lg: 175 }}
@@ -234,7 +241,7 @@ export default function Home() {
         >
           <Link
             //zIndex={900000}
-            fontFamily={"courier"}
+            fontFamily={"Open Sans"}
             color={"black"}
             fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
             onClick={() =>
