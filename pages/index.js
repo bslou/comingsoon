@@ -150,7 +150,7 @@ export default function Home() {
         >
           <Text
             zIndex={900000}
-            fontWeight={800}
+            fontWeight={900}
             color={"#FFFFFF"}
             fontSize={{ base: "50pt", md: "60pt", lg: "70pt" }}
             fontFamily={"Open Sans"}
