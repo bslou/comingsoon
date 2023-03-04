@@ -246,7 +246,7 @@ export default function Home() {
             fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
             onClick={() =>
               router.push(
-                "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMSqJmcxcFHvnJSdxSsPsMlCBjhDCLBRcvvKgtQfjThdLNTXMxkbSjFKkMPBBSQGLPMSZlV"
+                "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=apassionatenerdshop@gmail.com"
               )
             }
             target={"_blank"}
