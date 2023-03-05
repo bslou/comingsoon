@@ -135,7 +135,12 @@ export default function Home() {
             //backdropFilter="blur(8px)" // add the blur effect
           />
         </Box> */}
-        <Button colorScheme={"transparent"} width={300} marginTop={5}>
+        <Button
+          colorScheme={"transparent"}
+          width={300}
+          marginTop={5}
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/top.png"
             alt={"A Passionate Nerd Top Icon Clothing Brand"}
@@ -229,6 +234,14 @@ export default function Home() {
                 </Button>
               </Flex>
             </form>
+            <Text
+              color={"black"}
+              as="i"
+              fontFamily={"Open Sans"}
+              fontSize={{ base: "6pt", md: "8pt", lg: "10pt" }}
+            >
+              Store opening is estimated to be between March 18-April 5
+            </Text>
           </Flex>
         </Flex>
         <Flex
