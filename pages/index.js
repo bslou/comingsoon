@@ -295,7 +295,7 @@ export default function Home() {
               }}
               onClick={() =>
                 toast({
-                  title: "Facebook not created yet",
+                  title: "Tiktok not created yet",
                   isClosable: true,
                   status: "info",
                   duration: 3000,
@@ -303,8 +303,8 @@ export default function Home() {
               }
             >
               <Image
-                src="/facebook.png"
-                alt={"A Passionate Nerd - Facebook Icon"}
+                src="/tiktok.png"
+                alt={"A Passionate Nerd - Tiktok Icon"}
               />
             </Button>
           </Flex>
