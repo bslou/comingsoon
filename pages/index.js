@@ -81,7 +81,7 @@ export default function Home() {
         <title>A Passionate Nerd - Coming Soon Page</title>
         <meta
           name="description"
-          content="A Passionate Nerd - a clothing brand designed for people pursuing their passions. The brand is in progress and will be released sooner than later. This is the A Passionate Nerd official coming soon page!"
+          content="A Passionate Nerd - a clothing brand designed to inspire people to pursue their passions. The brand is in progress and will be released sooner than later. This is the A Passionate Nerd official coming soon page, sign up to stay tuned for the release. We do not spam! :)"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -113,7 +113,7 @@ export default function Home() {
           onClick={() => router.push("/")}
         >
           <Image
-            src="/top.png"
+            src="/top2.png"
             alt={"A Passionate Nerd Top Icon Clothing Brand"}
           />
         </Button>
