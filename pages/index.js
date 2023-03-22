@@ -160,7 +160,7 @@ export default function Home() {
               backgroundColor={"rgba(235, 235, 235, 0.7)"}
               paddingLeft={2}
               paddingRight={2}
-              width={"35vw"}
+              width={{ base: "55vw", md: "45vw", lg: "35vw" }}
               alignItems={"center"}
               justifyContent={"center"}
             >
