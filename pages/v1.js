@@ -103,9 +103,38 @@ export default function Home() {
         bgPosition={"center"}
         bgRepeat={"none"}
         bgAttachment={"fixed"}
-        bgImage={"url('/img2.png')"}
+        bgImage={"url('/img.png')"}
         bgColor={"rgba(0, 0, 0, 0.25)"}
       >
+        <Box
+          filter="blur(100px)"
+          //filter="blur(50px)"
+          w="100vw" // set the width of the box to match the image
+          h="100vh"
+          bgColor={"rgba(0, 0, 0, 0.25)"}
+          position="absolute"
+          bgSize={"cover"}
+          bgPosition={"center"}
+          bgRepeat={"none"}
+          bgAttachment={"fixed"}
+          bgImage={"url('/img.png')"}
+        ></Box>
+        {/* <Box
+            filter="blur(50px)"
+            w="100vw" // set the width of the box to match the image
+            h="100vh"
+            position="absolute"
+          >
+            <Image
+              src="/img.png" // replace with the URL of your image
+              w="100vw" // set the width of the image to fill the box
+              h="100vh" // set the height of the image to fill the box
+              objectFit="cover" // set the object-fit property to cover the box
+              alt="A Passionate Nerd Shirt/Hoodies/Clothing Image" // add alt text for accessibility
+              position="absolute" // position the box on top of the image
+              //backdropFilter="blur(8px)" // add the blur effect
+            />
+          </Box> */}
         <Button
           colorScheme={"transparent"}
           width={300}
@@ -122,23 +151,23 @@ export default function Home() {
           alignItems={"center"}
           gap={3}
           position={"absolute"}
-          top={"20vh"}
+          top={"24vh"}
         >
-          <Flex
-            backgroundColor={"rgba(235, 235, 235, 0.7)"}
-            paddingLeft={2}
-            paddingRight={2}
-            marginBottom={{ base: "1vh", lg: "2vh" }}
+          <Text
+            zIndex={900000}
+            fontWeight={900}
+            color={"#FFFFFF"}
+            fontSize={{ base: "50pt", md: "60pt", lg: "70pt" }}
+            fontFamily={"Open Sans"}
+            textAlign={"center"}
+            backgroundColor={"#000"}
+            paddingLeft={{ base: 3, md: 5, lg: 7 }}
+            paddingRight={{ base: 3, md: 5, lg: 7 }}
+            borderRadius={12}
           >
-            <Text
-              color={"black"}
-              fontSize={{ base: "14pt", md: "18pt", lg: "22pt" }}
-              fontFamily={"Open Sans"}
-            >
-              "Fullzip Initial Launch"
-            </Text>
-          </Flex>
-          {/* <Image
+            Coming Soon
+          </Text>
+          <Image
             position={"absolute"}
             src="/exc.png"
             alt={"A Passionate Nerd Exclusive Sign"}
@@ -146,60 +175,24 @@ export default function Home() {
             zIndex={900000000}
             right={0}
             top={{ base: -5, md: -9, lg: -10 }}
-          /> */}
+          />
           <Flex
             direction={"column"}
             alignItems={"center"}
             justifyContent={"center"}
             gap={2}
           >
-            <Flex
-              backgroundColor={"rgba(235, 235, 235, 0.7)"}
-              paddingLeft={2}
-              paddingRight={2}
-              width={"35vw"}
-              alignItems={"center"}
-              justifyContent={"center"}
+            <Text
+              textAlign={"center"}
+              zIndex={900000}
+              color={"#000"}
+              fontFamily={"Open Sans"}
+              fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
+              as={"i"}
             >
-              <Text
-                textAlign={"center"}
-                zIndex={900000}
-                color={"#000"}
-                fontFamily={"Open Sans"}
-                fontSize={{ base: "10pt", md: "12pt", lg: "14pt" }}
-                fontWeight={700}
-                //as={"i"}
-              >
-                A clothing brand designed for people pursuing their passions. We
-                will start off the journey by launching A Passionate Nerd
-                zip-ups. Our goal is to also start selling shirts as soon as
-                possible but for now we are trying to find the best resources in
-                order to create the highest quality shirts possible with the
-                fastest possible shipping.
-              </Text>
-            </Flex>
-            <Flex
-              backgroundColor={"rgba(235, 235, 235, 0.7)"}
-              paddingLeft={2}
-              paddingRight={2}
-              width={"35vw"}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Text
-                textAlign={"center"}
-                zIndex={900000}
-                color={"red"}
-                fontFamily={"Open Sans"}
-                fontSize={{ base: "6pt", md: "8pt", lg: "10pt" }}
-                fontWeight={700}
-                //as={"i"}
-              >
-                ENTER YOUR EMAIL TO BE NOTIFIED FOR FULLZIP RESTOCK. Get access
-                to special discounts & early access to our drops!
-              </Text>
-            </Flex>
-            {/* <Text
+              A clothing brand designed for people pursuing their passions.
+            </Text>
+            <Text
               textAlign={"center"}
               zIndex={900000}
               color={"#000"}
@@ -208,17 +201,17 @@ export default function Home() {
               as={"i"}
             >
               Subscribe below to newsletter (I promise we do not spam).
-            </Text> */}
+            </Text>
             <form
               ref={form}
               onSubmit={(e) => {
                 submitIt(e);
               }}
             >
-              <Flex /*gap={5}*/>
+              <Flex gap={5}>
                 <Input
                   backgroundColor={"white"}
-                  borderRadius={"none"}
+                  borderRadius={20}
                   placeholder={"Email Address"}
                   type={"email"}
                   fontFamily={"Open Sans"}
@@ -231,26 +224,24 @@ export default function Home() {
                 />
                 <Button
                   fontFamily={"Open Sans"}
-                  backgroundColor={"#565656"}
-                  colorScheme={"transparent"}
-                  borderRadius={"none"}
+                  backgroundColor={"white"}
+                  borderRadius={20}
                   width={{ base: 125, md: 150, lg: 175 }}
                   fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
                   type={"submit"}
-                  color={"white"}
                 >
                   Subscribe
                 </Button>
               </Flex>
             </form>
-            {/* <Text
+            <Text
               color={"black"}
               as="i"
               fontFamily={"Open Sans"}
               fontSize={{ base: "6pt", md: "8pt", lg: "10pt" }}
             >
               Store opening is estimated to be between March 18-April 5
-            </Text> */}
+            </Text>
           </Flex>
         </Flex>
         <Flex
@@ -261,36 +252,27 @@ export default function Home() {
           justifyContent={"center"}
           gap={2}
         >
-          <Flex
-            backgroundColor={"rgba(235, 235, 235, 0.7)"}
-            paddingLeft={2}
-            paddingRight={2}
-            //width={"35vw"}
-            alignItems={"center"}
-            justifyContent={"center"}
+          <Link
+            //zIndex={900000}
+            fontFamily={"Open Sans"}
+            color={"black"}
+            fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
+            onClick={() =>
+              router.push(
+                "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=apassionatenerdshop@gmail.com"
+              )
+            }
+            target={"_blank"}
           >
-            <Link
-              //zIndex={900000}
-              fontFamily={"Open Sans"}
-              color={"black"}
-              fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
-              onClick={() =>
-                router.push(
-                  "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=apassionatenerdshop@gmail.com"
-                )
-              }
-              target={"_blank"}
-            >
-              apassionatenerdshop@gmail.com
-            </Link>
-          </Flex>
+            apassionatenerdshop@gmail.com
+          </Link>
           <Flex alignItems={"flex-end"} justifyContent={"center"}>
             <Button
               colorScheme={"transparent"}
               width={"25%"}
-              // _hover={{
-              //   backgroundColor: "white",
-              // }}
+              _hover={{
+                backgroundColor: "white",
+              }}
               onClick={() =>
                 toast({
                   title: "Instagram not created yet",
@@ -308,9 +290,9 @@ export default function Home() {
             <Button
               colorScheme={"transparent"}
               width={"25%"}
-              // _hover={{
-              //   backgroundColor: "white",
-              // }}
+              _hover={{
+                backgroundColor: "white",
+              }}
               onClick={() =>
                 toast({
                   title: "Tiktok not created yet",
