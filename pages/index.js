@@ -94,9 +94,12 @@ export default function Home() {
       </Head>
       <Flex
         w="100vw" // set the width of the box to match the image
-        h="100vh" // set the height of the box to match the image
+        //h="100vh" // set the height of the box to match the image
+        minHeight={"100vh"}
+        gap={"17vh"}
         direction={"column"}
         alignItems={"center"}
+        justifyContent={"center"}
         //justifyContent={"space-between"}
         //gap={"10vh"}
         bgSize={"cover"}
@@ -121,8 +124,8 @@ export default function Home() {
           direction={"column"}
           alignItems={"center"}
           gap={3}
-          position={"absolute"}
-          top={"20vh"}
+          //position={"absolute"}
+          //top={"20vh"}
         >
           <Flex
             backgroundColor={"rgba(235, 235, 235, 0.7)"}
@@ -254,8 +257,8 @@ export default function Home() {
           </Flex>
         </Flex>
         <Flex
-          position={"absolute"}
-          bottom={"5vh"}
+          //position={"absolute"}
+          //bottom={"5vh"}
           direction="column"
           alignItems={"center"}
           justifyContent={"center"}
