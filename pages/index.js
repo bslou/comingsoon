@@ -169,7 +169,7 @@ export default function Home() {
                 zIndex={900000}
                 color={"#000"}
                 fontFamily={"Open Sans"}
-                fontSize={{ base: "10pt", md: "12pt", lg: "14pt" }}
+                fontSize={{ base: "8pt", md: "10pt", lg: "12pt" }}
                 fontWeight={700}
                 //as={"i"}
               >
@@ -207,7 +207,7 @@ export default function Home() {
                 fontWeight={700}
                 //as={"i"}
               >
-                ENTER YOUR EMAIL TO BE NOTIFIED FOR FULLZIP RESTOCK. Get access
+                ENTER YOUR EMAIL TO BE NOTIFIED FOR FULLZIP LAUNCH. Get access
                 to special discounts & early access to our drops!
               </Text>
             </Flex>
