@@ -173,12 +173,15 @@ export default function Home() {
                 fontWeight={700}
                 //as={"i"}
               >
-                A clothing brand designed for people pursuing their passions. We
-                will start off the journey by launching A Passionate Nerd
-                zip-ups. Our goal is to also start selling shirts as soon as
-                possible but for now we are trying to find the best resources in
-                order to create the highest quality shirts possible with the
-                fastest possible shipping.
+                A Passionate Nerd is a clothing brand that is dedicated to
+                inspiring people to pursue their passions. Our mission is to
+                create a community of individuals who are passionate about what
+                they do and are not afraid to show it. The brand's initial
+                launch will feature zip-up hoodies that are perfect for cooler
+                weather, with plans to expand our product line to include tees
+                as well. By wearing A Passionate Nerd apparel, customers can
+                showcase their love for their hobbies, jobs, and interests and
+                inspire others to do the same.
               </Text>
             </Flex>
             <Flex
