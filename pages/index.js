@@ -304,13 +304,15 @@ export default function Home() {
               //   backgroundColor: "white",
               // }}
               onClick={() =>
-                toast({
-                  title: "Instagram not created yet",
-                  isClosable: true,
-                  status: "info",
-                  duration: 3000,
-                })
+                // toast({
+                //   title: "Instagram not created yet",
+                //   isClosable: true,
+                //   status: "info",
+                //   duration: 3000,
+                // })
+                router.push("https://www.instagram.com/apassionatenerd/")
               }
+              //target={"_blank"}
             >
               <Image
                 src="/insta.png"
@@ -324,13 +326,15 @@ export default function Home() {
               //   backgroundColor: "white",
               // }}
               onClick={() =>
-                toast({
-                  title: "Tiktok not created yet",
-                  isClosable: true,
-                  status: "info",
-                  duration: 3000,
-                })
+                // toast({
+                //   title: "Tiktok not created yet",
+                //   isClosable: true,
+                //   status: "info",
+                //   duration: 3000,
+                // })
+                router.push("https://www.tiktok.com/@passionatenerd")
               }
+              //target={"_blank"}
             >
               <Image
                 src="/tiktok.png"
